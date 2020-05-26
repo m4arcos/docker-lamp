@@ -26,5 +26,5 @@ git config core.fileMode false
 - Montar o container Docker
 
 ```bash
-docker-compose up -d
+PHPV_VERSION=7.4 docker-compose up -d
 ```
