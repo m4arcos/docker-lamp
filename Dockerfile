@@ -42,6 +42,10 @@ RUN pecl uninstall xdebug; \
 RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"; \
         php composer-setup.php --install-dir=. --filename=composer; \
         mv composer /usr/local/bin/
+ENV PATH="~/.composer/vendor/bin:${PATH}"
+
+# Instala PHPCS
+RUN composer global require "squizlabs/php_codesniffer=*"
 
 # We enable the errors only in development
 ENV DISPLAY_ERRORS="On"

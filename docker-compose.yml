@@ -1,14 +1,14 @@
-version: "3.8"
+version: "3.3"
 services:
     www:
         container_name: lamp-www
         build:
             context: .
             args:
-                PHP_VERSION: ${PHP_VERSION}
+                PHP_VERSION: 7.4
         ports:
             # - "80:80"
-            - "80:80"
+            - "81:80"
         volumes:
             - ./www:/var/www/html/
             - ./docker-conf/php:/usr/local/etc/php/
